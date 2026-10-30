@@ -1,0 +1,11 @@
+﻿rodada;resultado_original;resultado_repetido;igual
+1;B-D-A;B-D-A;True
+2;A-B-C;A-B-C;True
+3;A-A-A;A-A-A;True
+4;E-A-A;E-A-A;True
+5;E-A-E;E-A-E;True
+6;C-B-A;C-B-A;True
+7;B-B-D;B-B-D;True
+8;B-E-B;B-E-B;True
+9;E-D-C;E-D-C;True
+10;E-D-D;E-D-D;True
