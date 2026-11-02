@@ -4,10 +4,6 @@ import csv
 from collections.abc import Mapping, Sequence
 from pathlib import Path
 from types import ModuleType
-from typing import cast
-
-import matplotlib
-import matplotlib.pyplot
 
 from src.calculos import QUANTIDADE_TRAJETORIAS
 from src.tipos import Frequencia, Trajetoria
@@ -36,7 +32,7 @@ def escrever_csv(caminho: Path, linhas: Sequence[Mapping[str, object]]) -> None:
 
 def salvar_grafico_frequencias(pasta: Path, frequencias: Sequence[Frequencia]) -> None:
     """E1: compara a probabilidade teórica com a frequência observada."""
-    grafico = cast(matplotlib.pyplot, carregar_graficos())
+    grafico = carregar_graficos()
     nomes = [linha["resultado"] for linha in frequencias]
     teoria = [linha["probabilidade_teorica"] * 100 for linha in frequencias]
     observacao = [linha["frequencia_relativa"] * 100 for linha in frequencias]
