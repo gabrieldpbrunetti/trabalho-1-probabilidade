@@ -93,4 +93,4 @@ A sequência principal é sorteada uma vez e compartilhada por E1, E2, E4 e E5. 
 
 ## Uso de inteligência artificial
 
-A inteligência artificial foi usada como apoio na elaboração inicial do código, do README e dos testes.
+A inteligência artificial foi usada como apoio na elaboração inicial do código, do README e dos testes. O grupo conferiu as regras da máquina, os pagamentos e o cálculo do lucro, a reprodução dos resultados pelas sementes e os resultados dos testes automáticos.
