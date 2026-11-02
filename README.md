@@ -2,7 +2,7 @@
 
 Este pacote contém o simulador em Python, as tabelas CSV, os gráficos e testes automáticos. Não inclui o relatório.
 
-## Integrante
+## Integrantes
 
 - Programação e simulação: Enzo Hubner Moura de Andrade, Kaio Marroque e Gabriel Brunetti.
 
@@ -17,11 +17,21 @@ py -m pip install -r requirements.txt
 py simulador.py
 ```
 
-No Linux ou WSL, execute:
+No Linux ou WSL, abra um terminal na pasta do projeto e crie um ambiente virtual para instalar as dependências:
 
 ```bash
-python3 -m pip install -r requirements.txt
-python3 simulador.py
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python simulador.py
+```
+
+Em novos terminais, ative novamente o ambiente com `source .venv/bin/activate` antes de executar o simulador. Para sair do ambiente virtual, use `deactivate`.
+
+Se a criação do ambiente informar que o módulo `venv` ou `ensurepip` não está disponível, no Ubuntu ou Debian instale o pacote e repita o comando de criação:
+
+```bash
+sudo apt install python3-venv
 ```
 
 O programa mostra uma rodada de exemplo e salva os arquivos em `resultados/`. Cada experimento tem sua própria pasta; `ambiente.csv` fica na raiz.
@@ -32,7 +42,7 @@ Para executar as verificações automáticas:
 py -m unittest discover -s tests -v
 ```
 
-No Linux ou WSL, use `python3 -m unittest discover -s tests -v`.
+No Linux ou WSL, com o ambiente virtual ativo, use `python -m unittest discover -s tests -v`.
 
 ## Regras implementadas
 
@@ -53,11 +63,11 @@ No Linux ou WSL, use `python3 -m unittest discover -s tests -v`.
 | E5 — pagamentos base e +10%        | `resultados/experimento_5/experimento5_comparacao.csv`, `experimento5_rodadas.csv`                                                                      |
 | Ambiente                           | `resultados/ambiente.csv`                                                                                                                               |
 
-Os nomes dos arquivos são preservados dentro de cada pasta de experimento. Os CSVs usam ponto e vírgula como separador. No E2, a sequência de 2026 é a mesma do E1. No E3, o gerador iniciado em 42 continua entre os participantes. O E4 usa os 9.999 pares da sequência de 10.000 rodadas do E1. O E5 reaplica as duas tabelas de pagamentos às mesmas rodadas.
+Os nomes dos arquivos são preservados dentro de cada pasta de experimento. Os CSVs usam ponto e vírgula como separador. No E2, a sequência de 2026 é a mesma do E1. No E3, o gerador iniciado em 42 continua entre os participantes. O E4 usa os 9.999 pares da sequência de 10.000 rodadas do E1. O E5 reaplica as duas tabelas de pagamentos às mesmas rodadas. Executar o simulador mais de uma vez sobrescreve os arquivos existentes.
 
 ## Figuras no relatório
 
-Os gráficos exportados contêm apenas eixos, unidades, categorias e legendas de identificação. No editor do relatório, coloque o número, a legenda e a fonte fora da imagem, conforme o enunciado. Sugestões de legendas (ajuste a numeração à ordem do relatório):
+Os gráficos exportados contêm apenas eixos, unidades, categorias e legendas de identificação.
 
 - Figura 1 — Probabilidades teóricas e frequências observadas em 10.000 rodadas (semente 2026).
 - Figura 2 — Evolução do lucro médio acumulado para as sementes 10, 2026 e 123456, com referência teórica de −0,16 crédito por rodada.
